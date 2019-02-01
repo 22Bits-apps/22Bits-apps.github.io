@@ -1628,21 +1628,7 @@ $baseurl: '{{ site.baseurl }}/images';
 	#cta {
 		.inner {
 			@include vendor('display', 'flex');
-			max-width: 46em;
-
-			header {
-				@include vendor('order', '1');
-				padding-right: 3em;
-				width: 70%;
-
-				p {
-					color: inherit;
-				}
-			}
-			
-		.inner2 {
-			@include vendor('display', 'flex');
-			max-width: 28em;
+			max-width: 45em;
 
 			header {
 				@include vendor('order', '1');
@@ -1682,6 +1668,49 @@ $baseurl: '{{ site.baseurl }}/images';
 				}
 			}
 		}
+		
+		.inner2 {
+			@include vendor('display', 'flex');
+			max-width: 45em;
+
+			header {
+				@include vendor('order', '1');
+				padding-right: 3em;
+				width: 70%;
+
+				p {
+					color: inherit;
+				}
+			}
+
+			.actions {
+				@include vendor('order', '2');
+				width: 30%;
+			}
+
+			@include breakpoint(medium) {
+				display: block;
+				text-align: center;
+
+				header {
+					padding-right: 0;
+					width: 100%;
+				}
+
+				.actions {
+					margin-left: auto;
+					margin-right: auto;
+					max-width: 20em;
+					width: 100%;
+				}
+			}
+
+			@include breakpoint(small) {
+				.actions {
+					max-width: none;
+				}
+			}
+		}	
 	}
 
 /* Main */
